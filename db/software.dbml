@@ -43,6 +43,7 @@ Table event {
   id int [pk]
   name varchar
   date datetime
+  event_type int [ref: > event_type.id]
 }
 
 Table event_type {

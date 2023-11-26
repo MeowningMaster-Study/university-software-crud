@@ -25,6 +25,12 @@ dependencies:
 - io-streams
 - text
 - bytestring
+- pretty
+- time
+- bytestring
+- binary
+- haskeline
+- utf8-string
 
 ghc-options:
 - -Wall
