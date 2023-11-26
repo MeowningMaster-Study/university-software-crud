@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module DB where
+module SQLConnection where
 
 import Data.Text as T ( Text )
 import Database.MySQL.Base

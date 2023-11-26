@@ -1,6 +1,6 @@
 module Main (main) where
 
-import DB
+import SQLConnection
 
 main :: IO ()
 main = do

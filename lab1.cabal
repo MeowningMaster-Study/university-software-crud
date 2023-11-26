@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      DB
+      SQLConnection
   other-modules:
       Paths_lab1
   autogen-modules:
