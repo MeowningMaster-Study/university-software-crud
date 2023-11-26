@@ -1,0 +1,51 @@
+Project DBML {
+  Note: '''
+    Розробити інформаційну систему 
+    "Пакети прикладних програм, розроблених на факультеті".
+    Таблиці БД містять таку інформацію: 
+    Інформація про студентів та викладачів,
+    які займаються розробкою ППП, 
+    графік роботи семінарів для ознайомлення з ППП, 
+    план проведення демонстрацій та тестових випробувань. 
+    Передбачити можливість запровадження 
+    та коригування інформації.
+    Кількість таблиць має бути більше 5.
+  '''
+}
+
+Table person {
+  id int pk
+  name varchar
+  person_type int [ref: > person_type.id]
+}
+
+Table person_type {
+  id int pk
+  name varchar [note: 'student | teacher']
+}
+
+Table software {
+  id int pk
+  name varchar
+}
+
+Table developer {
+  // connects sowtware to its developers
+  software_id int [ref: > software.id]
+  person_id int [ref: > person.id]
+
+  indexes {
+    (software_id, person_id) [pk]
+  }
+}
+
+Table event {
+  id int [pk]
+  name varchar
+  date datetime
+}
+
+Table event_type {
+  id int [pk]
+  name varchar [note: 'seminar | demonstation | testing']
+}
